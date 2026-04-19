@@ -15,7 +15,9 @@ const registerUser = asyncHandler(async (req, res) => {
   // check for user creation
   // return response
   const { username, email, password, fullName } = req.body;
-  console.log("email", email);
+  //   console.log("email", email);
+  //   console.log(req.body);
+
   if (
     [username, email, password, fullName].some((field) => field?.trim() === "")
   ) {
@@ -33,6 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const coverImageFile = req.files?.find(
     (f) => f.fieldname.trim() === "coverImage"
   );
+  //   console.log(req.files);
 
   const avatarLocalPath = avatarFile?.path;
   const coverImageLocalPath = coverImageFile?.path;
